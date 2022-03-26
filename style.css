@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+.h1{
+    width: 25ch;
+}
+
+body{
+    font-family: 'Catamaran', sans-serif;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/556/708/large_2x/vector-modern-abstract-striped-squares-pattern-repeat-on-white-color-background-and-texture.jpg);
+    background-size: contain;
+}
+
+.tiny{
+    width: 7ch;
+}
+
+.short{
+    width: 10ch;
+}
+
+.input-field, .input-button{
+    border: none;
+    box-shadow: 0 0 0.25em 0.25em #d7d7d7;
+    border-radius: 0.5em;
+    margin-left: 1ch;
+    padding-left: 1ch;
+}
+
+.input-button{
+    padding: 0.5em 1em;
+    margin: 0;
+}
+
+.add-process{
+    grid-column: 2 / 3;
+    width: max-content;
+    justify-self: end;
+}
+
+.delete-process{
+    margin-left: 1em;
+}
+
+/*
+    Horizontal
+*/
+
+.dynamic-memory{
+    font-size: 22px;
+    width: var(--memory-size);
+    height: 2em;
+    border-radius: 0.25em;
+    background-color: #080;
+    overflow: hidden;
+    display: flex;
+}
+
+.process{
+    height: 2em;
+    border-right: 2px dashed #fff;
+    width: var(--size);
+    transform: scaleX(0);
+    opacity: 0.25;
+    transform-origin: left;
+    animation: show-process 500ms ease-in-out forwards;
+}
+
+@keyframes show-process {
+    to{
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.empty.process::before{
+    background-color: inherit;
+}
+
+/* Vertical */
+
+/* .dynamic-memory{
+    font-size: 22px;
+    height: var(--memory-size);
+    width: 2em;
+    border-radius: 0.25em;
+    background-color: #080;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+.process{
+    width: 2em;
+    border-bottom: 2px dashed #fff;
+    display: grid;
+    place-items: center;
+    height: var(--size);
+    background-color: var(--color);
+} */
+
+.process::before{
+    display: grid;
+    place-items: center;
+    content: attr(id);
+    width: var(--process-size);
+    background-color: var(--color);
+    color: white;
+    height: 100%;
+}
+
+.add-program{
+    padding: 0.5em;
+    padding-left: 0;
+    display: grid;
+    align-items: center;
+    gap: 0.25em 0.5em;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.options{
+    padding: 0.25em 0 0.75em;
+}
+
+.input-radio{
+    display: block;
+    margin: 0.5em;
+}
+
+.input-radio::after{
+    content: attr(aria-label);
+    display: block;
+    margin-left: 1.5em;
+    width: max-content;
+}
+
+.main{
+    display: grid;
+    justify-items: center;
+    gap: 0.5em;
+}
+
+.remove-program{
+    margin-top: 0.5em;
+}

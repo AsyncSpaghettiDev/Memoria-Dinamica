@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacenamiento Dinámico</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer type="module"></script>
+</head>
+
+<body>
+    <main class="main">
+        <h1 class="h1">Simulador de Almacenamiento Dinámico</h1>
+        <div class="memory-size">
+            <label for="memory-size-field">Tamaño de la memoria</label>
+            <input type="number" class="input-field tiny" id="memory-size-field" min="1" value="40">
+        </div>
+        <div class="add-program">
+            <label for="id-program">ID del programa</label>
+            <input class="input-field short" type="number" id="id-program" min="1" value="1">
+
+            <label for="tamanio-program">Espacio Requerido</label>
+            <input class="input-field short" type="number" id="tamanio-program" min="1" value="5">
+
+            <label for="metodo-program">Método a utilizar</label>
+            <div class="options">
+                <input checked  class="input-radio" type="radio" name="metodo-program" value="0" aria-label="First Fit">
+                <input          class="input-radio" type="radio" name="metodo-program" value="1" aria-label="Best Fit">
+                <input          class="input-radio" type="radio" name="metodo-program" value="2" aria-label="Best Fit Extended">
+            </div>
+            <button type="button" class="input-button add-process">Agregar proceso</button>
+        </div>
+        <div class="dynamic-memory" memory-size="40" style="--size:40ch;">
+        </div>
+        <div class="remove-program">
+            <label for="id-program-toDelete">ID del programa a eliminar</label>
+            <input class="input-field short" type="number" id="id-program-toDelete" min="1" value="1">
+            <button type="button" class="input-button delete-process">Eliminar</button>
+        </div>
+    </main>
+</body>
+
+</html>
